@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    /* Core brand colors - Duolingo-inspired vibrant palette */
+    --background: 120 20% 98%;
+    --foreground: 220 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 15%;
+
+    /* Signature green - success, progress, primary actions */
+    --primary: 145 63% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Warm orange - XP, rewards, achievements */
+    --secondary: 35 95% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 120 10% 92%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Purple accent - leagues, special achievements */
+    --accent: 265 70% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Hearts - classic red */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 15% 88%;
+    --input: 120 15% 88%;
+    --ring: 145 63% 42%;
+
+    --radius: 1rem;
+
+    /* Custom game colors */
+    --xp-gold: 45 95% 55%;
+    --streak-orange: 25 95% 55%;
+    --heart-red: 0 80% 58%;
+    --league-bronze: 30 50% 45%;
+    --league-silver: 220 10% 65%;
+    --league-gold: 45 85% 50%;
+    --league-purple: 265 70% 55%;
+    --code-bg: 220 20% 12%;
+    --code-line: 220 15% 18%;
+    --correct-green: 145 70% 45%;
+    --incorrect-red: 0 70% 55%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark gray background - avoid pure black */
+    --background: 220 20% 10%;
+    --foreground: 210 15% 93%;
+
+    --card: 220 18% 14%;
+    --card-foreground: 210 15% 93%;
+
+    --popover: 220 18% 14%;
+    --popover-foreground: 210 15% 93%;
+
+    /* Neon/soft accents for dark mode */
+    --primary: 145 70% 55%;
+    --primary-foreground: 220 20% 10%;
+
+    --secondary: 35 100% 60%;
+    --secondary-foreground: 220 20% 10%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 12% 65%;
+
+    /* Brighter accent for dark mode */
+    --accent: 265 80% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 145 70% 55%;
+
+    /* Neon game colors for dark mode */
+    --xp-gold: 45 100% 60%;
+    --streak-orange: 25 100% 60%;
+    --heart-red: 0 85% 60%;
+    --correct-green: 145 80% 55%;
+    --incorrect-red: 0 80% 58%;
+    --code-bg: 220 25% 8%;
+    --code-line: 220 20% 14%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-nunito antialiased;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .font-nunito {
+    font-family: 'Nunito', sans-serif;
+  }
+
+  /* Game-like button press effect */
+  .game-button {
+    @apply relative transform transition-all duration-100 active:scale-95;
+    box-shadow: 0 4px 0 hsl(var(--primary) / 0.4);
+  }
+
+  .game-button:active {
+    box-shadow: 0 2px 0 hsl(var(--primary) / 0.4);
+    transform: translateY(2px) scale(0.98);
+  }
+
+  /* XP shimmer animation */
+  .xp-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--xp-gold)) 0%,
+      hsl(45 100% 70%) 50%,
+      hsl(var(--xp-gold)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  /* Heart pulse animation */
+  .heart-pulse {
+    animation: heartPulse 1s ease-in-out infinite;
+  }
+
+  @keyframes heartPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+
+  /* Streak fire animation */
+  .streak-glow {
+    animation: streakGlow 1.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes streakGlow {
+    0% { filter: drop-shadow(0 0 4px hsl(var(--streak-orange))); }
+    100% { filter: drop-shadow(0 0 12px hsl(var(--streak-orange))); }
+  }
+
+  /* XP gain pop animation */
+  .xp-pop {
+    animation: xpPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  @keyframes xpPop {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  /* Correct answer celebration */
+  .correct-bounce {
+    animation: correctBounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  @keyframes correctBounce {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+  }
+
+  /* Wrong answer shake */
+  .wrong-shake {
+    animation: wrongShake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  }
+
+  @keyframes wrongShake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+    20%, 40%, 60%, 80% { transform: translateX(4px); }
+  }
+
+  /* Drag item styles */
+  .dragging {
+    @apply opacity-90 scale-105 shadow-xl z-50;
+    cursor: grabbing !important;
+  }
+
+  .drag-over {
+    @apply border-2 border-dashed border-primary bg-primary/10;
+  }
+
+  /* Code block styling */
+  .code-block {
+    @apply font-mono text-sm rounded-lg px-4 py-3;
+    background: hsl(var(--code-bg));
+    color: hsl(120 60% 75%);
+  }
+
+  /* Progress bar fill animation */
+  .progress-fill {
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* League badge glow */
+  .league-glow {
+    animation: leagueGlow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes leagueGlow {
+    0% { box-shadow: 0 0 10px hsl(var(--accent) / 0.3); }
+    100% { box-shadow: 0 0 25px hsl(var(--accent) / 0.6); }
+  }
+
+  /* Float animation for mascot */
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Slide up animation */
+  .slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  @keyframes slideUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  /* Touch-friendly tap targets */
+  .tap-target {
+    @apply min-h-[48px] min-w-[48px];
+  }
+}
