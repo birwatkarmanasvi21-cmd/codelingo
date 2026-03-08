@@ -1,73 +1,209 @@
-# Welcome to your Lovable project
+🚀 Codelingo — AI Powered Coding Learning Platform
 
-## Project info
+Codelingo is an AI-driven interactive coding learning platform designed to help students learn programming concepts through problem solving, AI feedback, and gamification.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Instead of memorizing syntax, Codelingo focuses on thinking like a programmer first, guiding learners through structured problem solving before writing code.
 
-## How can I edit this code?
+✨ Features
+🧠 AI Thinking Lock
 
-There are several ways of editing your application.
+Before writing code, users must:
 
-**Use Lovable**
+Select the correct algorithmic approach
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Explain their reasoning
 
-Changes made via Lovable will be committed automatically to this repo.
+The AI evaluates their thinking and unlocks the code editor only if the approach is correct.
 
-**Use your preferred IDE**
+🎤 AI Interview Simulator
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Practice technical interviews with AI.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Features:
 
-Follow these steps:
+AI generates DSA interview questions
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+User explains solution
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+AI evaluates reasoning and gives feedback + score
 
-# Step 3: Install the necessary dependencies.
-npm i
+🏆 Mini Hackathons
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Short coding challenges where users must:
+
+Choose an approach
+
+Explain logic
+
+Write solution code
+
+AI evaluates the submission and provides feedback.
+
+🔎 AI Code Analyzer
+
+Users can paste code and get:
+
+Error detection
+
+Code quality suggestions
+
+Corrected version of code
+
+💬 AI Mentor Community
+
+A built-in chatbot where users can ask:
+
+coding questions
+
+algorithm doubts
+
+programming concepts
+
+The AI mentor provides beginner-friendly explanations.
+
+🎮 Gamification System
+
+Learning is gamified using:
+
+XP system
+
+Streak tracking
+
+Hearts (lives)
+
+Badges
+
+Leagues
+
+This motivates consistent learning similar to Duolingo-style progression.
+
+👤 Personalized Learning
+
+Users complete an onboarding flow where they choose:
+
+Learning track (DSA, Python, Java, Web, DBMS)
+
+Skill level
+
+Learning goal
+
+Daily learning time
+
+The platform adapts the experience based on this data.
+
+🏗️ System Architecture
+Frontend (React + TypeScript)
+        │
+        ▼
+AWS API Gateway
+        │
+        ▼
+AWS Lambda (Node.js)
+        │
+        ├── Amazon Bedrock (AI models)
+        │
+        └── DynamoDB (User data & stats)
+🛠 Tech Stack
+Frontend
+
+React
+
+TypeScript
+
+TailwindCSS
+
+Shadcn UI
+
+Backend
+
+AWS Lambda
+
+API Gateway
+
+Amazon Bedrock (Nova Lite AI model)
+
+Database
+
+DynamoDB
+
+Authentication
+
+AWS Cognito
+
+Deployment
+
+AWS
+
+📦 Installation
+
+Clone the repository:
+
+git clone https://github.com/YOUR_USERNAME/codelingo.git
+
+Go to project folder:
+
+cd codelingo
+
+Install dependencies:
+
+npm install
+
+Run the development server:
+
 npm run dev
-```
+⚙️ Environment Variables
 
-**Edit a file directly in GitHub**
+Create a .env file:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+VITE_API_URL=YOUR_API_GATEWAY_URL
+🧪 Example AI Workflow
 
-**Use GitHub Codespaces**
+Example for AI Interview:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+User requests interview question
 
-## What technologies are used for this project?
+Lambda calls Bedrock Nova Lite
 
-This project is built with:
+AI generates a DSA question
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+User submits reasoning
 
-## How can I deploy this project?
+AI evaluates and returns:
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Verdict
+Score
+Feedback
+Follow-up question
+🎯 Goals of the Project
 
-## Can I connect a custom domain to my Lovable project?
+Codelingo aims to:
 
-Yes, you can!
+Teach problem solving before coding
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Provide AI guided learning
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Simulate real technical interviews
+
+Encourage consistent practice through gamification
+
+🚀 Future Improvements
+
+Planned enhancements:
+
+Real-time multi-user coding rooms
+
+Leaderboards
+
+AI-generated coding roadmaps
+
+Code execution sandbox
+
+Personalized learning analytics
+
+Multi-language support
+
+👨‍💻 Authors
+
+Developed as part of a hackathon project.
+
+Team: AlgoAlliance
