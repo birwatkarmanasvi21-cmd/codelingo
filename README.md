@@ -1,5 +1,7 @@
 🚀 Codelingo — AI Powered Coding Learning Platform
 
+Prototype Link :  https://main.d2srqbduh1zy1a.amplifyapp.com/
+
 Codelingo is an AI-driven interactive coding learning platform designed to help students learn programming concepts through problem solving, AI feedback, and gamification.
 
 Instead of memorizing syntax, Codelingo focuses on thinking like a programmer first, guiding learners through structured problem solving before writing code.
